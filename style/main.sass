@@ -1,2 +1,224 @@
 @import "reset"
 @import "color"
+
+$img-width: 404px
+$img-table: 350px
+
+
+html
+  background-color: lighten($bgc-main, 2%)
+  *
+    color: $black
+  figure.wave
+    width: 100vw
+    height: 300px
+    background-image: url('/fgmoto/static/svg/wave.svg')
+    background-size: cover
+    background-position: bottom
+    background-repeat: no-repeat
+    position: absolute
+    left: 0
+    right: 0
+    z-index: -1
+    opacity: 0.8
+
+header
+  width: 100vw
+  height: 80vh
+  background-color: $black
+
+
+.product-single
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  max-width: 1440px
+  margin: 80px auto
+  &-img
+    figure.img
+      width: $img-width
+      height: $img-width * 1.618
+      background-size: cover
+      background-repeat: no-repeat
+      background-image: url('/fgmoto/static/img/mitas_type.jpg')
+      background-position: center
+      border-radius: 20px
+
+  &-filter
+    display: flex
+    flex-direction: column
+    max-width: 692px
+    *
+      font-family: Montserrat, sans-serif
+    .price_range
+      display: flex
+      justify-content: space-between
+      padding-top: 8px
+    h1
+      font-size: 40px
+      font-weight: 600
+      font-family: Montserrat, sans-serif
+    h3
+      font-size: 21px
+      color: $semi-black
+      opacity: 80%
+    &-block
+      display: flex
+      flex-direction: column
+      margin-top: 26px
+      h3
+        font-weight: 600
+        color: $black
+        opacity: 1
+      .blocks
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        .block
+          display: flex
+          flex-direction: column
+          justify-content: center
+          width: 160px
+          height: 98px
+          border: 1px solid $black
+          box-sizing: border-box
+          margin-left: 0
+          margin-top: 17px
+          padding-left: 17px
+          border-radius: 8px
+          h4
+            font-size: 21px
+            font-weight: 600
+          p
+            font-size: 15px
+            color: $semi-black
+            opacity: 0.87
+          &:not(:nth-child(4n+1))
+            margin-left: 17px
+          &.active
+            border: 2px solid $blue
+        &-left,&-right
+          width: 50%
+          display: flex
+          flex-wrap: wrap
+          margin: 0
+          .block
+            &:not(:nth-child(4n+1))
+              margin-left: 0
+            &:not(:nth-child(2n+1))
+              margin-left: 17px
+
+
+@media screen and (max-width: 1250px)
+  .product-single
+    &-filter
+      max-width: 514px
+      h1
+        font-size: 35px
+      &-block
+        .blocks
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          .block
+            &:not(:nth-child(4n+1))
+              margin-left: 0
+            &:not(:nth-child(3n+1))
+              margin-left: 17px
+          &-left,&-right
+            width: 100%
+            display: flex
+            flex-wrap: wrap
+            margin: 0
+            .block
+              &:not(:nth-child(4n+1))
+                margin-left: 0
+              &:not(:nth-child(2n+1))
+                margin-left: 0
+              &:not(:nth-child(3n+1))
+                margin-left: 17px
+
+@media screen and (max-width: 1020px)
+  .product-single
+    &-img
+      display: none
+    &-filter
+      max-width: 692px
+      h1
+        font-size: 35px
+      &-block
+        .blocks
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          .block
+            margin-left: 0
+            &:not(:nth-child(3n+1))
+              margin-left: 0
+            &:not(:nth-child(4n+1))
+              margin-left: 17px
+
+@media screen and (max-width: 764px)
+  .product-single
+    &-img
+      display: none
+    &-filter
+      max-width: 514px
+      h1
+        font-size: 35px
+      &-block
+        .blocks
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          .block
+            &:not(:nth-child(4n+1))
+              margin-left: 0
+            &:not(:nth-child(3n+1))
+              margin-left: 17px
+
+@media screen and (max-width: 568px)
+  .product-single
+    &-img
+      display: none
+    &-filter
+      max-width: 337px
+      h1
+        font-size: 26px
+      h3
+        font-size: 17px
+      &-block
+        .blocks
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          .block
+            &:not(:nth-child(4n+1))
+              margin-left: 0
+            &:not(:nth-child(3n+1))
+              margin-left: 0px
+            &:not(:nth-child(2n+1))
+              margin-left: 17px
+
+@media screen and (max-width: 368px)
+  .product-single
+    &-filter
+      max-width: 305px
+      h1
+        font-size: 26px
+      h3
+        font-size: 17px
+      &-block
+        .blocks
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          .block
+            width: calc(0.9*160px)
+            height: calc(0.9*98px)
+            &:not(:nth-child(4n+1))
+              margin-left: 0
+            &:not(:nth-child(3n+1))
+              margin-left: 0px
+            &:not(:nth-child(2n+1))
+              margin-left: 17px
