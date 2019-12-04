@@ -12,12 +12,14 @@
 <body>
 
 <div class="buyForm" id="buyForm">
-    <div class="close" onclick="document.getElementById('buyForm').style.display = 'none';">Закрыть</div>
-    <form action="send.php" method="POST">
-        <input type="text" name="fio" id="" class="form_text" placeholder="ФИО..." required>
-        <input type="text" name="phone" id="" class="form_text" placeholder="Номер телефона..." required>
-        <input type="text" name="city" id="" class="form_text" placeholder="Город..." required>
-        <p>В течение 20 минут наш менеджер свяжется с Вами для подтвержения оплаты.</p>
-        <button>Подтвердить</button> 
-    </form>         
+    <div class="inside">
+        <div class="close" onclick="document.getElementById('buyForm').style.display = 'none';">Закрыть</div>
+        <form action="send.php" method="POST">
+            <input type="text" name="fio" id="" class="form_text" placeholder="ФИО..." required>
+            <input type="text" name="phone" id="" class="form_text" placeholder="Номер телефона..." required>
+            <input type="text" name="city" id="" class="form_text" placeholder="Город..." required>
+            <p>В течение 20 минут наш менеджер свяжется с Вами для подтвержения оплаты.</p>
+            <button>Подтвердить</button> 
+        </form>   
+    </div>      
 </div>

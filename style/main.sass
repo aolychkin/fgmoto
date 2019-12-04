@@ -5,7 +5,6 @@ $img-width: 404px
 $img-table: 350px
 
 html
-  background-color: lighten($bgc-main, 2%)
   overflow-x: hidden
   *
     color: $black
@@ -24,10 +23,16 @@ html
 
 header
   width: 100vw
-  height: 80vh
-  background-color: $black
+  height: 40vw
+  background-image: url('/static/img/desc_banner.jpg')
+  background-size: cover
+  background-position: bottom
+  background-repeat: no-repeat
 
 .buyForm
+  width: 100vw
+  height: 100vh
+  background-color: rgba($black, 0.60)
   z-index: 99
   position: fixed
   display: none
@@ -35,55 +40,65 @@ header
   left: 50%
   transform: translate(-50%, -50%);
   justify-content: center
-  width: 620px
-  height: 620px
-  background-color: $black
-  border: 2px solid white
-  border-radius: 20px
-  .close
-    position: absolute
-    top: 0
-    right: 0
-    padding: 17px
-    font-family: Montserrat, sans-serif
-    color: #ffffff
-    &:hover
-      cursor: pointer
-  form
-    display: flex
-    flex-direction: column
-    align-items: center
+  .inside
+    z-index: 99
+    position: fixed
+    display: inherit
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%);
     justify-content: center
-    *
-      font-family: Montserrat, sans-serif
-      width: $img-width
-    input
-      margin: 17px 0
-      border: 1px solid white
-      border-radius: 4px
-      font-size: 26px
-      padding: 8px 8px
-    p
-      padding: 8px 0
-      line-height: 1.1
-      color: #ffffff
-    button
-      margin-top: 17px
+    width: 620px
+    height: 620px
+    background-color: $black
+    box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.4)
+    border-radius: 20px
+    .close
+      position: absolute
+      top: 0
+      right: 0
       padding: 17px
-      background-color: $black
-      border: 2px solid #ffffff
-      border-radius: 8px
-      font-size: 26px
-      font-weight: 600
+      font-family: Montserrat, sans-serif
       color: #ffffff
+      &:hover
+        cursor: pointer
+    form
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      *
+        font-family: Montserrat, sans-serif
+        width: $img-width
+      input
+        margin: 17px 0
+        border: 1px solid white
+        border-radius: 4px
+        font-size: 26px
+        padding: 8px 8px
+      p
+        padding: 8px 0
+        line-height: 1.1
+        color: #ffffff
+      button
+        margin-top: 17px
+        padding: 17px
+        background-color: $black
+        border: 2px solid #ffffff
+        border-radius: 8px
+        font-size: 26px
+        font-weight: 600
+        color: #ffffff
 
-
+.wrapper 
+  padding: 80px 0
+  background-color: #F1F3F6
 .product-single
   display: flex
   flex-direction: row
   justify-content: space-around
   max-width: 1440px
-  margin: 80px auto
+  margin: auto
   min-height: 90vh
   &-img
     figure.img
@@ -91,9 +106,10 @@ header
       height: $img-width * 1.618
       background-size: cover
       background-repeat: no-repeat
-      background-image: url('/static/img/mitas_type.jpg')
+      background-image: url('/static/img/tire_img.jpg')
       background-position: center
-      border-radius: 20px
+      border-radius: 40px
+      box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1), -30px -30px 80px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5)
 
   &-filter
     display: flex
@@ -150,6 +166,7 @@ header
           margin-top: 17px
           padding-left: 17px
           border-radius: 8px
+          box-shadow: 4px 4px 17px rgba(55, 84, 170, 0.1), -4px -4px 17px #FFFFFF, inset 2px 2px 10px rgba(255, 255, 255, 0.5)
           h4
             font-size: 21px
             font-weight: 600
@@ -161,6 +178,7 @@ header
             margin-left: 17px
           &.active
             border: 2px solid $blue
+            box-shadow: 4px 4px 17px rgba(55, 84, 170, 0.1), -4px -4px 17px #FFFFFF, inset 2px 2px 4px rgba($blue, 0.5)
         &-left,&-right
           width: 50%
           display: flex
@@ -246,8 +264,22 @@ header
               margin-left: 0
             &:not(:nth-child(3n+1))
               margin-left: 17px
+          .blocks-right
+            .block
+              &:not(:nth-child(4n+1))
+                margin-left: 0
+              &:not(:nth-child(3n+1))
+                margin-left: 17px
 
 @media screen and (max-width: 568px)
+  header
+    width: 100vw
+    height: 133vw
+    background-image: url('/static/img/mobile_banner.jpg')
+    img
+      max-width: 22vw
+  .wrapper
+    padding: 40px 0
   .product-single
     &-img
       display: none
@@ -269,33 +301,42 @@ header
               margin-left: 0px
             &:not(:nth-child(2n+1))
               margin-left: 17px
+          .blocks-right
+            .block
+              &:not(:nth-child(4n+1))
+                margin-left: 0
+              &:not(:nth-child(3n+1))
+                margin-left: 0
+              &:not(:nth-child(2n+1))
+                margin-left: 17px
+        
   .buyForm
-    display: flex
-    width: 100vw
-    height: 100vh
-    border: 0
-    border-radius: 0
-    form
-      *
-        font-family: Montserrat, sans-serif
-        width: 89vw
-      input
-        margin: 17px 0
-        font-size: 26px
-        padding: 8px 8px
-      p
-        padding: 8px 0
-        line-height: 1.1
-        color: #ffffff
-      button
-        margin-top: 17px
-        padding: 17px
-        background-color: $black
-        border: 2px solid #ffffff
-        border-radius: 8px
-        font-size: 26px
-        font-weight: 600
-        color: #ffffff
+    .inside
+      width: 100vw
+      height: 100vh
+      border: 0
+      border-radius: 0
+      form
+        *
+          font-family: Montserrat, sans-serif
+          width: 89vw
+        input
+          margin: 17px 0
+          font-size: 26px
+          padding: 8px 8px
+        p
+          padding: 8px 0
+          line-height: 1.1
+          color: #ffffff
+        button
+          margin-top: 17px
+          padding: 17px
+          background-color: $black
+          border: 2px solid #ffffff
+          border-radius: 8px
+          font-size: 26px
+          font-weight: 600
+          color: #ffffff
               
 
 @media screen and (max-width: 368px)

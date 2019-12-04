@@ -1,7 +1,8 @@
 <header>
     <img src="static/svg/logo.svg" alt="">
 </header>
-<figure class="wave"></figure>
+<!-- <figure class="wave"></figure> -->
+<div class="wrapper">
 <section class="product-single">
     <div class="product-single-img">
         <figure class="img"></figure>
@@ -36,3 +37,4 @@
         </div>
     </div>
 </section>
+</div>

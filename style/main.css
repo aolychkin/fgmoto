@@ -40,7 +40,6 @@ table {
 }
 
 html {
-  background-color: #eae7e5;
   overflow-x: hidden;
 }
 
@@ -64,11 +63,17 @@ html figure.wave {
 
 header {
   width: 100vw;
-  height: 80vh;
-  background-color: #111;
+  height: 40vw;
+  background-image: url("/static/img/desc_banner.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .buyForm {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 17, 17, 0.6);
   z-index: 99;
   position: fixed;
   display: none;
@@ -79,14 +84,28 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.buyForm .inside {
+  z-index: 99;
+  position: fixed;
+  display: inherit;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 620px;
   height: 620px;
   background-color: #111;
-  border: 2px solid white;
+  -webkit-box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.4);
   border-radius: 20px;
 }
 
-.buyForm .close {
+.buyForm .inside .close {
   position: absolute;
   top: 0;
   right: 0;
@@ -95,11 +114,11 @@ header {
   color: #ffffff;
 }
 
-.buyForm .close:hover {
+.buyForm .inside .close:hover {
   cursor: pointer;
 }
 
-.buyForm form {
+.buyForm .inside form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,12 +134,12 @@ header {
           justify-content: center;
 }
 
-.buyForm form * {
+.buyForm .inside form * {
   font-family: Montserrat, sans-serif;
   width: 404px;
 }
 
-.buyForm form input {
+.buyForm .inside form input {
   margin: 17px 0;
   border: 1px solid white;
   border-radius: 4px;
@@ -128,13 +147,13 @@ header {
   padding: 8px 8px;
 }
 
-.buyForm form p {
+.buyForm .inside form p {
   padding: 8px 0;
   line-height: 1.1;
   color: #ffffff;
 }
 
-.buyForm form button {
+.buyForm .inside form button {
   margin-top: 17px;
   padding: 17px;
   background-color: #111;
@@ -143,6 +162,11 @@ header {
   font-size: 26px;
   font-weight: 600;
   color: #ffffff;
+}
+
+.wrapper {
+  padding: 80px 0;
+  background-color: #F1F3F6;
 }
 
 .product-single {
@@ -156,7 +180,7 @@ header {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   max-width: 1440px;
-  margin: 80px auto;
+  margin: auto;
   min-height: 90vh;
 }
 
@@ -165,9 +189,11 @@ header {
   height: 653.672px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/static/img/mitas_type.jpg");
+  background-image: url("/static/img/tire_img.jpg");
   background-position: center;
-  border-radius: 20px;
+  border-radius: 40px;
+  -webkit-box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1), -30px -30px 80px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
+          box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1), -30px -30px 80px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
 }
 
 .product-single-filter {
@@ -272,6 +298,8 @@ header {
   margin-top: 17px;
   padding-left: 17px;
   border-radius: 8px;
+  -webkit-box-shadow: 4px 4px 17px rgba(55, 84, 170, 0.1), -4px -4px 17px #FFFFFF, inset 2px 2px 10px rgba(255, 255, 255, 0.5);
+          box-shadow: 4px 4px 17px rgba(55, 84, 170, 0.1), -4px -4px 17px #FFFFFF, inset 2px 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 .product-single-filter-block .blocks .block h4 {
@@ -291,6 +319,8 @@ header {
 
 .product-single-filter-block .blocks .block.active {
   border: 2px solid #0070D8;
+  -webkit-box-shadow: 4px 4px 17px rgba(55, 84, 170, 0.1), -4px -4px 17px #FFFFFF, inset 2px 2px 4px rgba(0, 112, 216, 0.5);
+          box-shadow: 4px 4px 17px rgba(55, 84, 170, 0.1), -4px -4px 17px #FFFFFF, inset 2px 2px 4px rgba(0, 112, 216, 0.5);
 }
 
 .product-single-filter-block .blocks-left, .product-single-filter-block .blocks-right {
@@ -422,9 +452,26 @@ header {
   .product-single-filter-block .blocks .block:not(:nth-child(3n+1)) {
     margin-left: 17px;
   }
+  .product-single-filter-block .blocks .blocks-right .block:not(:nth-child(4n+1)) {
+    margin-left: 0;
+  }
+  .product-single-filter-block .blocks .blocks-right .block:not(:nth-child(3n+1)) {
+    margin-left: 17px;
+  }
 }
 
 @media screen and (max-width: 568px) {
+  header {
+    width: 100vw;
+    height: 133vw;
+    background-image: url("/static/img/mobile_banner.jpg");
+  }
+  header img {
+    max-width: 22vw;
+  }
+  .wrapper {
+    padding: 40px 0;
+  }
   .product-single-img {
     display: none;
   }
@@ -457,30 +504,36 @@ header {
   .product-single-filter-block .blocks .block:not(:nth-child(2n+1)) {
     margin-left: 17px;
   }
-  .buyForm {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .product-single-filter-block .blocks .blocks-right .block:not(:nth-child(4n+1)) {
+    margin-left: 0;
+  }
+  .product-single-filter-block .blocks .blocks-right .block:not(:nth-child(3n+1)) {
+    margin-left: 0;
+  }
+  .product-single-filter-block .blocks .blocks-right .block:not(:nth-child(2n+1)) {
+    margin-left: 17px;
+  }
+  .buyForm .inside {
     width: 100vw;
     height: 100vh;
     border: 0;
     border-radius: 0;
   }
-  .buyForm form * {
+  .buyForm .inside form * {
     font-family: Montserrat, sans-serif;
     width: 89vw;
   }
-  .buyForm form input {
+  .buyForm .inside form input {
     margin: 17px 0;
     font-size: 26px;
     padding: 8px 8px;
   }
-  .buyForm form p {
+  .buyForm .inside form p {
     padding: 8px 0;
     line-height: 1.1;
     color: #ffffff;
   }
-  .buyForm form button {
+  .buyForm .inside form button {
     margin-top: 17px;
     padding: 17px;
     background-color: #111;
