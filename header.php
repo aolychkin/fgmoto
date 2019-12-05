@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="static/font/montserrat.css">
     <link rel="stylesheet" href="style/main.css">
-    <title>Document</title>
+    <title>Магазин мото-запчастей</title>
 </head>
 <body>
 

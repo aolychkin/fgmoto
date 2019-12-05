@@ -2,20 +2,17 @@
 require 'header.php';
 require "connect.php";
 $body = ' '; 
-$id = (int)json_decode($_COOKIE["id"], true);
+$id = (int)json_decode($_COOKIE["product"], true);
 
 $q = $db->query("SELECT * FROM product WHERE id=$id");
 if($q):
-    while($prod = $q->fetch_array(MYSQLI_ASSOC)):
-        $body .= '<br> id товара: ' . $prod['id'];
-        $body .= '<br> кубатура: ' . $prod['cub'];
-        $body .= '<br> радиус передней шины: ' . $prod['radius_front'];
-        $body .= '<br> радиус задней шины: ' . $prod['radius_back'];
-        $body .= '<br> кол-во шипов: ' . $prod['spike'];
-        $body .= '<br> цена товара: ' . $prod['price'];
-    endwhile;
+    $prod = $q->fetch_array(MYSQLI_ASSOC);
+        $body .= '\n id товара: ' . $prod['id'];
+        $body .= '\n кубатура: ' . $prod['cub'];
+        $body .= '\n радиус передней шины: ' . $prod['radius_front'];
+        $body .= '\n радиус задней шины: ' . $prod['radius_back'];
+        $body .= '\n кол-во шипов: ' . $prod['spike'];
 endif;
-
 $fio = $_POST['fio'];
 $phone = $_POST['phone'];
 $city = $_POST['city'];
