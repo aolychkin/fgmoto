@@ -1,28 +1,29 @@
 <?php 
+require "connect.php";
+$type = (int)json_decode($_COOKIE["type"], true);
+$cub = (int)json_decode($_COOKIE["cub"], true);
 $q = $db->query("SELECT * FROM product WHERE kit_unit=$type AND cub=$cub");
 $prod = $q->fetch_array(MYSQLI_ASSOC);
 if($prod['radius_front']): ?>
 
-<div class="blocks-left <?php if($type > 1) echo 'full_radius'?>">
-
 <?php
+$count = 0;
 $q = $db->query("SELECT * FROM product WHERE kit_unit=$type AND cub=$cub");
 if($q):
-    while($prod = $q->fetch_array(MYSQLI_ASSOC)):
+    $prod = $q->fetch_array(MYSQLI_ASSOC);
         $count++;
 ?>
         <div 
             class="block <?php if($count == 1) echo 'active';?>"
             id="radius_front_value_<?php echo $prod['radius_front'];?>" 
-            onclick="selectRadius(<?php echo $prod['radius_front'] ?>, 'radius_front');"
+            onclick="selectRadius(<?php echo $prod['radius_front'] ?>, 'radius_front', 0);"
         >
             <h4><?php echo $prod['radius_front']?> R</h4>
-            <p><?php echo $prod['spike'] ? $prod['spike'] . ' шипов': 'Передняя';?></p>
+            <p>Передняя</p>
         </div>
 
         <? 
-        endwhile; 
-    endif; ?>
-    </div> 
+    endif; 
+    ?>
     <?php
-endif; ?>
+endif; mysqli_close($db);?>

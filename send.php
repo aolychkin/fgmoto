@@ -32,12 +32,21 @@ $city = htmlspecialchars($city);
 $city = urldecode($city);
 $city = trim($city);
 
-if (mail("aolychkin@gmail.com", "Заказ с сайта", " ФИО: ".$fio."\r\n Номер телефона: ".$phone . "\r\n Город: ".$city . "\r\n" . $body,"From: aolychkin@gmail.com \r\n"))
- {
-    echo "<br><br><br><br><h1>Заказ принят! </h1><br><h3>Мы скоро свяжемся с Вами для его подтверждения.</h3><a href='/'>Вернуться назад</a>";
-} else {
+if (mail("aolychkin@gmail.com", "Заказ с сайта", " ФИО: ".$fio."\r\n Номер телефона: ".$phone . "\r\n Город: ".$city . "\r\n" . $body,"From: aolychkin@gmail.com \r\n")):
+     require "header.php";
+     ?>
+        <div class="success">
+            <div class="inside">
+                <h1>Заказ принят!</h1>
+                <h3>Мы скоро свяжемся с Вами для его подтверждения.</h3>
+                <a href='/'>Вернуться назад</a>
+            </div>
+        </div> 
+     <?php
+     require "footer.php";
+else: 
     echo "<h1>при отправке сообщения возникли ошибки</h1>";
-}
+endif;
 
 ?>
 

@@ -21,20 +21,18 @@ function selectType(value){
 }
 
 function selectRadius(value, term, spike){
-    if(term == "radius_front")
+    if(term == "radius_front"){
         setCookie('radius_front', value, 'Tue, 19 Jan 2038 03:14:07 GMT', '/');
-    if(term == "radius_back")
+        ajaxUpdate('radiusFront');
+    }
+    if(term == "radius_back"){
         setCookie('radius_back', value, 'Tue, 19 Jan 2038 03:14:07 GMT', '/');
-    
-    setCookie('spike', spike, 'Tue, 19 Jan 2038 03:14:07 GMT', '/');
-        
-    ajaxUpdate('radius');
-    if(getCookie('type') == 1){
-        if(getCookie('radius_front') && getCookie('radius_back')){
-            ajaxUpdate('price');
-        }
-    }else 
-        ajaxUpdate('price');
+        if(spike > 10 || spike !== 0)
+            setCookie('spike', spike, 'Tue, 19 Jan 2038 03:14:07 GMT', '/');
+        ajaxUpdate('radiusBack');
+    }
+
+    ajaxUpdate('price');
 }
 
 function ajaxUpdate(sterm){
