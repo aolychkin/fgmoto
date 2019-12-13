@@ -38,7 +38,7 @@ header
   display: none
   top: 50%
   left: 50%
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
   justify-content: center
   .inside
     z-index: 99
@@ -46,7 +46,7 @@ header
     display: inherit
     top: 50%
     left: 50%
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
     justify-content: center
     width: 620px
     height: 620px
@@ -90,7 +90,7 @@ header
         font-weight: 600
         color: #ffffff
 
-.wrapper 
+.wrapper
   padding: 80px 0
   background-color: #F1F3F6
 .product-single
@@ -216,12 +216,12 @@ header
       margin: 40px 20px
       margin-top: 0
     h3
-      font-size: 21px      
+      font-size: 21px
       opacity: 80%
       margin: 20px 20px
-    a 
+    a
       text-decoration: none
-      width: 260px    
+      width: 260px
       margin-top: 17px
       padding: 17px
       background-color: $black
@@ -230,10 +230,6 @@ header
       font-size: 26px
       font-weight: 600
       color: #ffffff
-  
-              
-              
-          
 
 
 @media screen and (max-width: 1250px)
@@ -252,18 +248,19 @@ header
               margin-left: 0
             &:not(:nth-child(3n+1))
               margin-left: 17px
-          &-left,&-right
+          #radiusFront_blocks,#radiusBack_blocks
             width: 100%
             display: flex
             flex-wrap: wrap
             margin: 0
-            .block
-              &:not(:nth-child(4n+1))
-                margin-left: 0
-              &:not(:nth-child(2n+1))
-                margin-left: 0
-              &:not(:nth-child(3n+1))
-                margin-left: 17px
+            &.full_radius
+              .block
+                &:not(:nth-child(4n+1))
+                  margin-left: 0
+                &:not(:nth-child(2n+1))
+                  margin-left: 0
+                &:not(:nth-child(3n+1))
+                  margin-left: 17px
 
 @media screen and (max-width: 1020px)
   .product-single
@@ -284,6 +281,20 @@ header
               margin-left: 0
             &:not(:nth-child(4n+1))
               margin-left: 17px
+          #radiusFront_blocks,#radiusBack_blocks
+            width: 100%
+            display: flex
+            flex-wrap: wrap
+            margin: 0
+            &.full_radius
+              .block
+                &:not(:nth-child(2n+1))
+                  margin-left: 0
+                &:not(:nth-child(3n+1))
+                  margin-left: 0
+                &:not(:nth-child(4n+1))
+                  margin-left: 17px
+
 
 @media screen and (max-width: 764px)
   .product-single
@@ -303,12 +314,13 @@ header
               margin-left: 0
             &:not(:nth-child(3n+1))
               margin-left: 17px
-          .blocks-right
-            .block
-              &:not(:nth-child(4n+1))
-                margin-left: 0
-              &:not(:nth-child(3n+1))
-                margin-left: 17px
+          #radiusFront_blocks,#radiusBack_blocks
+            &.full_radius
+              .block
+                &:not(:nth-child(4n+1))
+                  margin-left: 0
+                &:not(:nth-child(3n+1))
+                  margin-left: 17px
 
 @media screen and (max-width: 568px)
   header
@@ -340,15 +352,16 @@ header
               margin-left: 0px
             &:not(:nth-child(2n+1))
               margin-left: 17px
-          .blocks-right
-            .block
-              &:not(:nth-child(4n+1))
-                margin-left: 0
-              &:not(:nth-child(3n+1))
-                margin-left: 0
-              &:not(:nth-child(2n+1))
-                margin-left: 17px
-        
+          #radiusFront_blocks,#radiusBack_blocks
+            &.full_radius
+              .block
+                &:not(:nth-child(4n+1))
+                  margin-left: 0
+                &:not(:nth-child(3n+1))
+                  margin-left: 0
+                &:not(:nth-child(2n+1))
+                  margin-left: 17px
+
   .buyForm
     .inside
       width: 100vw
@@ -376,7 +389,7 @@ header
           font-size: 26px
           font-weight: 600
           color: #ffffff
-              
+
 
 @media screen and (max-width: 368px)
   .product-single
